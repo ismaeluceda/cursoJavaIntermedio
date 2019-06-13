@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="direccion" class="ejemplo4.Direccion" scope="prototype">
+		<property name="nombreVia" value="Gran Via"></property>
+		<property name="tipoVia" value="Calle"></property>
+		<property name="cp" value="28024"></property>
+		<property name="ciudad" value="Madrid"></property>
+	</bean>
+
+	<!-- autowire es una propiedad de los objetos de spring para hacer una autoinyeccion de los objetos.
+	A este bean persona intenta inyectar todos los objetos que pueda que esten dados de alta en el contenedor de spring -->
+	<bean id="persona" class="ejemplo4.Persona" autowire="byType">
+		<property name="nombre" value="Pepe"></property>
+	</bean>
+
+	<bean id="persona2" class="ejemplo4.Persona" autowire="byType">
+		<property name="nombre" value="Paco"></property>
+	</bean>
+
+</beans>

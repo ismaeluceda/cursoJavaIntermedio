@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- El alcance por defecto de los objetos en spring es Singleton y al menos 
+		tienen que tener un identificador y el tipo del objeto que queremos Para 
+		que esto funcione la clase tiene que tener el constructor por defecto -->
+	<bean id="personaSingleton" class="ejemplo1.Persona"
+		scope="singleton">
+		<property name="peso" value="70"></property>
+	</bean>
+
+	<bean id="personaSingleton2" class="ejemplo1.Persona">
+		<constructor-arg value="Cesar"></constructor-arg>
+		<constructor-arg value="56"></constructor-arg>
+		<constructor-arg value="74.45"></constructor-arg>
+	</bean>
+
+	<!-- podemos inicializar objetos mediante inner beans -->
+	<bean id="personaSingleton3" class="ejemplo1.Persona">
+		<property name="nombre" value="Cleopatra"></property>
+		<property name="direccion">
+			<bean class="ejemplo1.Direccion">
+				<property name="nombreVia" value="Nilo"></property>
+				<property name="tipoVia" value="Rio"></property>
+				<property name="cp" value="01001"></property>
+				<property name="ciudad" value="Tebas"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="direccion1" class="ejemplo1.Direccion">
+		<property name="nombreVia" value="Diamante"></property>
+		<property name="tipoVia" value="Paseo"></property>
+		<property name="cp" value="01002"></property>
+		<property name="ciudad" value="Madrid"></property>
+
+	</bean>
+
+	<bean id="personaSingleton4" class="ejemplo1.Persona">
+		<property name="nombre" value="Guillermo"></property>
+		<property name="direccion" ref="direccion1"></property>
+	</bean>
+
+	<bean id="personaPrototype" class="ejemplo1.Persona"
+		scope="prototype">
+		<property name="nombre" value="Napoleon"></property>
+		<property name="edad" value="80"></property>
+		<property name="peso" value="25"></property>
+	</bean>
+
+
+	<bean id="listaPersonas" class="java.util.ArrayList"></bean>
+
+</beans>
