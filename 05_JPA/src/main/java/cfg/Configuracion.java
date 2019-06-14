@@ -30,7 +30,7 @@ public class Configuracion {
 		ds.setUsername("root");
 		ds.setPassword("root");*/
 		ds.setDriverClassName("org.h2.Driver");
-		ds.setUrl("jdbc:h2:file:c:/h2/pruebaJpa");
+		ds.setUrl("jdbc:h2:file:/home/pue/Downloads/h2/pruebaJpa");
 		ds.setUsername("sa");
 		ds.setPassword("");
 		return ds;
