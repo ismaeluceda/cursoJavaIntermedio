@@ -51,7 +51,7 @@ public class Configuracion {
 		jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 		*/
 		jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-		jpaProperties.put("hibernate.hbm2ddl.auto", "create-drop");//create-drop update
+		jpaProperties.put("hibernate.hbm2ddl.auto", "update");//create-drop o update
 		jpaProperties.put("hibernate.show_sql", "true");
 		jpaProperties.put("hibernate.format_sql", "false");
 		entityManagerFactoryBean.setJpaProperties(jpaProperties);
