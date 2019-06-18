@@ -13,6 +13,10 @@ import org.springframework.stereotype.Component;
 @Table(name="peliculas")
 @Component
 public class Pelicula {
+	
+	//Ejemplo json 
+	//{"titulo":"Star Wars", "director":"James", "genero":"Sci-fi", "year":"1933"}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
