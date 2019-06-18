@@ -1,4 +1,4 @@
-package es.curso.demo;
+package com.curso;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
