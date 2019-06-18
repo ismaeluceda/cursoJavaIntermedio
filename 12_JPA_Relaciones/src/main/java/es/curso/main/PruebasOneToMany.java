@@ -73,7 +73,7 @@ public class PruebasOneToMany {
 
 		Cliente c2 = em.find(Cliente.class, 1);
 		System.out.println(c2.getNombre());
-		System.out.println(c2.getDatosBancarios().getBanco());//carga ansiosa
+		System.out.println(c2.getDatosBancarios().getBanco());//carga ansiosa, solo 1-to-1, no trae datos de un 1-to-many
 
 		//tengo que acceder a los pedidos antes de cerrar el entity manager
 		//si no daria error si intento acceder a los pedidos
